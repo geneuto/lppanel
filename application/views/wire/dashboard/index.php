@@ -1,5 +1,5 @@
 <?php $this->load->view('wire/estrutura/topo'); ?> <!-- Header -->
-
+<title><?= $title; ?></title>
 </head>
 <?php $this->load->view('wire/estrutura/menu'); ?> <!-- Menu -->
 

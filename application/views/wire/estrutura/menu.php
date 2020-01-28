@@ -1,4 +1,4 @@
-<body>
+<body onLoad="initTimer();">
 
     <div class="header-bg">
         <!-- Navigation Bar-->
@@ -28,8 +28,19 @@
                             </li>
                         </ul>
 
+                        <ul class="list-inline d-none d-lg-block mb-0" style="margin:0 auto; text-align:center">
+                            <li style="margin:0 auto; text-align:center"><span class="text" style="font-size:13px;color: #fff;"><i class="far fa-calendar-alt"></i>
+                                <?php
+                                    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                                    date_default_timezone_set('America/Sao_Paulo');
+                                    echo strftime('%d/%m/%Y', strtotime('today'));
+                                ?>
+                                 |  <i class="far fa-clock"></i> <span id="timer"></span>
+                            </li>
+                        </ul>
+
                         <ul class="navbar-right ml-auto list-inline float-right mb-0">
-                            <!-- language-->
+                            <!-- language
                             <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
                                 <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                     <img src="https://www.congressomundial.com/img/bandeiras/brazil.svg" class="mr-2" height="22" alt="" /> Português - BR <span class="mdi mdi-chevron-down"></span>
@@ -38,7 +49,7 @@
                                     <a class="dropdown-item" href="#"><img src="assets/images/flags/us_flag.jpg" alt="" height="16" /><span> Inglês - US </span></a>
                                     <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Espanhol - ES </span></a>
                                 </div>
-                            </li>
+                            </li>-->
 
                             <!-- full screen -->
                             <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
@@ -94,7 +105,7 @@
                             <li class="dropdown notification-list list-inline-item">
                                 <div class="dropdown notification-list nav-pro-img">
                                     <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                        <img src="<?php echo base_url('assets/images/users/user-1.jpg'); ?>" alt="Francisco Geneuto" class="rounded-circle">
+                                        <img src="<?php echo base_url('assets/images/users/user-1.jpg'); ?>" alt="<?= $this->session->userdata('nome') ?>" title="<?php echo $this->session->userdata('nome') ?>" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
@@ -103,7 +114,7 @@
                                         <a class="dropdown-item d-block" href="#"> <span class="badge badge-success float-right"> 11</span><i class="mdi mdi-settings"></i> Configurações</a>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Trocar senha</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Sair</a>
+                                        <a class="dropdown-item text-danger" href="<?= base_url('login/login/sair') ?>"><i class="mdi mdi-power text-danger"></i> Sair</a>
                                     </div>
                                 </div>
                             </li>

@@ -13,11 +13,17 @@ class Login extends CI_Controller {
         parent::__construct ();
         
         // Carregando MODEL de acesso ao banco de dados do sistema
-        $this->load->model('login/Login_model', 'Login_model', true);
+        $this->load->model('login_model', '', true);
 	}
 
 	public function index(){
 		$this->load->view('wire/entrada/login');
+    }
+
+    // Função de sair
+    public function sair(){
+        $this->session->sess_destroy();
+        redirect('login');
     }
     
     // Verificação de login
@@ -58,5 +64,17 @@ class Login extends CI_Controller {
         }
         die();
     }
-	
+
+    // Busca a data do sistema no banco de dados
+    private function chk_date($data_banco){
+
+        $data_banco = new DateTime($data_banco);
+        $data_hoje = new DateTime("now");
+
+        return $data_banco < $data_hoje;
+    }
+    
+    public function esqueciaSenha(){
+        $this->load->view('wire/entrada/esqueciasenha');
+    }
 }

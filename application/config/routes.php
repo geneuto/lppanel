@@ -50,16 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'dashboard';
-$route['404_override'] = 'erros/error/index';
+$route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 /* ENTRADA */
-$route['login'] = 'dashboard/dashboard/index'; // Pagina de login
-$route['esqueciasenha'] = 'dashboard/dashboard/esqueciasenha'; // Pagina de recuperacao de senha
+$route['login'] = 'login/login'; // Pagina de login
+$route['login/verificarLogin'] = 'login/login/verificarLogin'; //Verificação de login
+$route['login/esqueciasenha'] = 'login/login/esqueciaSenha'; // Pagina de recuperacao de senha
 $route['registro'] = 'dashboard/dashboard/registro'; // Pagina de login
 
 /* DASHBOARD */
-$route['dashboard'] = 'dashboard/dashboard/dashboard'; // Painel de controle
+$route['dashboard'] = 'dashboard'; // Painel de controle
 
 /* VENDAS */
 $route['vendas/propostas'] = 'vendas/propostas'; // Página de propostas

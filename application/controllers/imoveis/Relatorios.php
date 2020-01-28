@@ -8,6 +8,6 @@ class Relatorios extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('wire/imoveis/relatorios');
+		$this->load->view('wire/vendas/relatorios');
 	}
 }

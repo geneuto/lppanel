@@ -1,8 +1,7 @@
 /*
- Template Name: Stexo - Responsive Bootstrap 4 Admin Dashboard
- Author: Themesdesign
- Website: www.themesdesign.in
- File: Sweet Alert init js
+ Sistema: Mobaya WIRE
+ Author: Francisco Geneuto
+ Website: www.geneuto.com
  */
 
 !function ($) {
@@ -13,6 +12,18 @@
 
     //examples
     SweetAlert.prototype.init = function () {
+
+        //Custom Image
+        $('#falhanologin').click(function () {
+            swal({
+                title: 'Falha no login!',
+                text: 'Os dados de acesso estão incorretos, por favor tente novamente!',
+                type: 'warning',
+               // imageUrl: 'assets/images/logo-dark.png',
+                imageHeight: 30,
+                animation: false
+            })
+        });
 
         //Basic
         $('#sa-basic').on('click', function () {
@@ -28,7 +39,7 @@
             )
         });
 
-        //Success Message
+        //Mensagem de sucesso
         $('#sa-success').click(function () {
             swal(
                 {
@@ -42,7 +53,7 @@
             )
         });
 
-        //Warning Message
+        //Mensagem de alerta
         $('#sa-warning').click(function () {
             swal({
                 title: 'Are you sure?',

@@ -62,6 +62,12 @@ $route['registro'] = 'dashboard/dashboard/registro'; // Pagina de login
 /* DASHBOARD */
 $route['dashboard'] = 'dashboard'; // Painel de controle
 
+/* MINHA CONTA */
+$route['minhaconta'] = 'minhaconta/perfil'; // Perfil do usuário
+$route['minhaconta/alterarSenha'] = 'minhaconta/perfil/alterarSenha'; // Alterar a senha do usuário
+$route['minhaconta/editarUsuario'] = 'minhaconta/perfil/editarUsuario'; // Alterar as informações do usuário
+$route['minhaconta/editarEndereco'] = 'minhaconta/perfil/editarEndereco'; // Alterar endereço do usuário
+
 /* VENDAS */
 $route['vendas/propostas'] = 'vendas/propostas'; // Página de propostas
 $route['vendas/contratos'] = 'vendas/contratos'; // Página de contratos

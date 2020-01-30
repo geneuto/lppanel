@@ -1,5 +1,6 @@
 <? $this->load->view('wire/estrutura/topo'); ?>
-
+    <!-- Sweet Alert -->
+    <link href="<?php echo base_url('assets/plugins/sweet-alert2/sweetalert2.css'); ?>" rel="stylesheet" type="text/css">
     </head>
     <body>
 
@@ -121,7 +122,7 @@
                                 $('#btn-acessar').removeClass('disabled');
                                 $('#progress-acessar').addClass('hide');
 
-                                $('#call-modal').trigger('click');
+                                $('#falhanologin').trigger('click');
                             }
                         }
                     });
@@ -141,10 +142,21 @@
             });
 
         });
+        //Falha ao logar
+        function falhanologin(){
+            swal({
+                title: 'Falha no login!',
+                text: 'Os dados de acesso estão incorretos, por favor tente novamente!',
+                type: 'error',
+            });
+        }
     </script>
 
+    <!--  Modal de falha no login - mensagem dentro do js no assets/pages/sweet-aler.init.js -->
+    <a onclick="falhanologin()" type="button" class="btn btn-primary waves-effect waves-light" id="falhanologin" style="display:none;"></a>
         
         <!-- jQuery  -->
+        <!--<script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>-->
         <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/metismenu.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/jquery.slimscroll.js'); ?>"></script>
@@ -153,24 +165,9 @@
         <!-- App js -->
         <script src="<?php echo base_url('assets/js/app.js'); ?>"></script>
 
-    <!--  Modal content for the above example -->
-    <a href="#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
-    <div id="notification" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="myLargeModalLabel">Mobaya WIRE</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5 style="text-align: center">Os dados de acesso estão incorretos, por favor tente novamente!</h5>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
+        <!-- Sweet-Alert  -->
+        <script src="<?php echo base_url('assets/plugins/sweet-alert2/sweetalert2.min.js'); ?>"></script>
+       <!-- <script src="<?php echo base_url('assets/pages/sweet-alert.init.js'); ?>"></script> -->
     </body>
 
 </html>

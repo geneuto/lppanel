@@ -109,7 +109,7 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Perfil</a>
+                                        <a class="dropdown-item" href="<?= base_url('minhaconta/perfil') ?>"><i class="mdi mdi-account-circle"></i> Perfil</a>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Minha Carteira</a>
                                         <a class="dropdown-item d-block" href="#"> <span class="badge badge-success float-right"> 11</span><i class="mdi mdi-settings"></i> Configurações</a>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Trocar senha</a>

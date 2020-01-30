@@ -41,8 +41,21 @@ class Login_model extends CI_Model {
         return $this->db->get('usuarios')->row();
     }
 
-    public function alterarSenha($senha)
-    {
+    // Edita as informações do usuario no DB
+    public function editUser($id, $nome, $celular, $nascimento, $cpf, $rg, $creci, $email){
+        $this->db->set('nome', $nome);
+        $this->db->set('nascimento', $nascimento);
+        $this->db->set('creci', $creci);
+        $this->db->set('cpf', $cpf);
+        $this->db->set('rg', $rg);
+        $this->db->set('celular', $celular);
+        $this->db->set('email', $email);
+        $this->db->where('idUsuarios', $id);
+        return $this->db->update('usuarios');
+    }
+
+    // Altera a senha do usuário pegando a sessão logada
+    public function alterarSenha($senha){
         $this->db->set('senha', password_hash($senha, PASSWORD_DEFAULT));
         $this->db->where('idUsuarios',  $this->session->userdata('id'));
         $this->db->update('usuarios');

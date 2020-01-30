@@ -3422,7 +3422,7 @@ table.focus-on tbody tr.focused td {
 }
 
 .accountbg {
-  
+/*
 background: rgba(48,52,79,1);
 background: -moz-linear-gradient(left, rgba(48,52,79,1) 0%, rgba(64,86,196,1) 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, rgba(48,52,79,1)), color-stop(100%, rgba(64,86,196,1)));
@@ -3430,8 +3430,8 @@ background: -webkit-linear-gradient(left, rgba(48,52,79,1) 0%, rgba(64,86,196,1)
 background: -o-linear-gradient(left, rgba(48,52,79,1) 0%, rgba(64,86,196,1) 100%);
 background: -ms-linear-gradient(left, rgba(48,52,79,1) 0%, rgba(64,86,196,1) 100%);
 background: linear-gradient(to right, rgba(48,52,79,1) 0%, rgba(64,86,196,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30344f', endColorstr='#4056c4', GradientType=1 );
-
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30344f', endColorstr='#4056c4', GradientType=1 );*/
+  background: url('../images/restaurant.png');
   position: absolute;
   background-position: center center;
   height: 100%;
